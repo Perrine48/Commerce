@@ -9,9 +9,12 @@
 
         while ( have_posts() ) : the_post();?>
 
+        <div class="product">
+
             <?php the_title() ?>
             <?php the_content() ?>
 
+        </div>
     <?php
         endwhile;
 
@@ -20,7 +23,6 @@
 
     endif;
     ?>
-
     </main><!-- .site-main -->
 
 </div><!-- .content-area -->
