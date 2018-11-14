@@ -3,6 +3,8 @@ $(document).ready(function() {
 
     var products = $(".product");
     var more = $("#more");
+    var search = $("#search");
+    var form = $("#formsearch")
 
     for (var i = 0; i < products.length; i++) {
         if (i > 5) {
@@ -16,6 +18,12 @@ $(document).ready(function() {
             ($(products).css("display", "inline-block"))
         }
 
+    })
+
+    $(search).click(function(){
+        if ($(form).css("display", "none")) {
+            $(form).css("display", "inline-block")
+        }
     })
 
 

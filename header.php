@@ -20,9 +20,17 @@
         </nav>
         <h1> <?php bloginfo( 'name' ); ?> </h1>
         <ul class="navbis">
-            <li><i class="far fa-user"></i></li>
-            <li><i class="fas fa-shopping-cart"></i></li>
-            <li><i class="fas fa-search"></i></li>
+            <li><a href="commerce/my-account/"><i class="far fa-user"></i></a></li>
+            <li><a href="commerce/cart/"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><button id="search" type="button" title="Rechercher sur le site"><i class="fa fa-search"></i></button></li>
+            <li>
+                <div class="srch clearfix">
+                    <form method="GET" action="<?php echo get_site_url();?>" id="formsearch">
+                        <input max-length="120" autocomplete="off" placeholder="Rechercher..." value="<?php the_search_query(); ?>" name="s" id="q">
+                        <button id="search2" type="submit" title="Rechercher sur le site"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </li>
         </ul>
 
         <div class="slider">

@@ -2,21 +2,23 @@
 get_header(); ?>
 
 <main>
-    <nav role="navigation">
+    <nav role="navigation" class="categorymenu">
+        <ul>
+
         <?php
-            // wp_nav_menu( array(
-            //     'menu_class'     => 'categorymenu',
-            //     'theme_location' => 'categorymenu',
-            // ) );
 
-            $categories = get_categories('taxonomy=product_cat&&exclude=16');
+            $categories = get_categories('taxonomy=product_cat&&exclude=16,15');
               foreach($categories as $category){
-                  echo $category->name;
-              }
-
-
-
         ?>
+                <li><a href=<?php echo "commerce/product-category/".$category->slug ?>> <?php echo $category->name ?> </a></li>
+        <?php
+              }
+        ?>
+
+        </ul>
+            <p class="all">
+                <a href="commerce/uncategorized"> All Products >> </a>
+            </p>
     </nav>
     <?php woocommerce_content() ?>
     <input type="button" name="more" value="Show All" id="more">
